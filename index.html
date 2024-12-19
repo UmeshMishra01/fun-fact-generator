@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts about Uttar Pradesh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Facts about Uttar Pradesh</h1>
+        <p id="fact"></p>
+        <button id="newFactButton">Show Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Uttar Pradesh is the most populous state in India, with over 200 million residents.",
+            "The state capital is Lucknow, known for its rich history and culture.",
+            "Uttar Pradesh is home to the Taj Mahal, one of the Seven Wonders of the World.",
+            "The state has a diverse culture, with over 20 different languages spoken.",
+            "Varanasi, located in Uttar Pradesh, is one of the oldest inhabited cities in the world.",
+            "The Ganges River, considered sacred by Hindus, flows through Uttar Pradesh.",
+            "Uttar Pradesh is known for its traditional crafts, including pottery, weaving, and embroidery.",
+            "The state hosts the Kumbh Mela, the largest religious gathering in the world, every 12 years.",
+            "Uttar Pradesh has a rich historical heritage, with many ancient forts and palaces.",
+            "The state is famous for its cuisine, including dishes like kebabs, biryanis, and sweets like jalebi.",
+            "Uttar Pradesh is a major agricultural state, producing wheat, sugarcane, and rice.",
+            "The state has several national parks and wildlife sanctuaries, including Dudhwa National Park.",
+            "Uttar Pradesh is known for its festivals, including Diwali, Holi, and Eid, celebrated with great enthusiasm.",
+            "The state has a significant historical connection to the Indian independence movement.",
+            "Uttar Pradesh is home to many prominent educational institutions, including Aligarh Muslim University and Banaras Hindu University.",
+            "The state has a vibrant film industry, often referred to as 'Bollywood,' centered in Mumbai but with roots in UP.",
+            "Uttar Pradesh has a diverse geography, ranging from the Himalayan foothills to the plains of the Ganges.",
+            "The state is known for its traditional music and dance forms, including Kathak.",
+            "Uttar Pradesh has a rich literary heritage, being the birthplace of many famous poets and writers.",
+            "The state is a major hub for the textile industry, producing a variety of fabrics and garments.",
+            "Uttar Pradesh has a significant number of historical monuments, including Fatehpur Sikri and Agra Fort."
+        ];
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+            document.getElementById('fact').style.color = getRandomColor(); // Set random color for the fact
+        }
+
+        document.getElementById('newFactButton').addEventListener('click', showRandomFact);
+
+        // Show a random fact on initial load
+        showRandomFact();
+    </script>
+</body>
+</html>
